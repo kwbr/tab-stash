@@ -275,7 +275,7 @@ const showFilteredChildren = ref(false);
 
 const tooltip = computed(
   () =>
-    `${props.group.group.title}\n${nonHiddenChildren.value.length} tab${nonHiddenChildren.value.length === 1 ? "" : "s"}`,
+    `${props.group.group.title}\n${$ts("tab", nonHiddenChildren.value.length)}`,
 );
 
 const isRenaming = ref(false);

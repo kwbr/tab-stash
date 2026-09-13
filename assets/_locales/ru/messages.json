@@ -928,5 +928,125 @@
   },
   "restoreWillSaveSettings": {
     "message": "Tab Stash запомнит ваш выбор, но вы сможете изменить его позже в настройках или временно переопределить, удерживая клавишу Shift."
+  },
+  "showStashedTabsInTabMenu": {
+    "message": "Показывать отложенные вкладки во вкладке"
+  },
+  "showStashedTabsMenu": {
+    "message": "Показать отложенные вкладки"
+  },
+  "showStashedTabsInSidebarMenu": {
+    "message": "Показывать отложенные вкладки в боковой панели"
+  },
+  "stashTabsMenu": {
+    "message": "Отложить вкладки"
+  },
+  "stashPinnedTabsMenu": {
+    "message": "Отложить закрепленные вкладки"
+  },
+  "stashThisTabMenu": {
+    "message": "Отложить эту вкладку"
+  },
+  "stashThisTabToNewGroupMenu": {
+    "message": "Отложить эту вкладку в новую группу"
+  },
+  "copyTabsToStashMenu": {
+    "message": "Копировать вкладки в отложенные"
+  },
+  "copyThisTabToStashMenu": {
+    "message": "Копировать эту вкладку в отложенные"
+  },
+  "setupTabTitle": {
+    "message": "Tab Stash — Настройка"
+  },
+  "showStashedTabsTooltip": {
+    "message": "Показать отложенные вкладки"
+  },
+  "setUpTabStashTooltip": {
+    "message": "Настроить Tab Stash"
+  },
+  "deletedItemsPageTitle": {
+    "message": "Удаленные элементы — Tab Stash"
+  },
+  "optionsPageTitle": {
+    "message": "Tab Stash: Настройки"
+  },
+  "restorePageTitle": {
+    "message": "Восстановить привилегированную вкладку"
+  },
+  "moveSelectionToGroupTooltip.few": {
+    "message": "Переместить $1 выбранных элемента в эту группу (удерживайте $2 для копирования)"
+  },
+  "moveSelectionToGroupTooltip.many": {
+    "message": "Переместить $1 выбранных элементов в эту группу (удерживайте $2 для копирования)"
+  },
+  "moveSelectionToGroupTooltip.one": {
+    "message": "Переместить $1 выбранный элемент в эту группу (удерживайте $2 для копирования)"
+  },
+  "moveSelectionToGroupTooltip.other": {
+    "message": "Переместить $1 выбранных элементов в эту группу (удерживайте $2 для копирования)"
+  },
+  "moveSelectionToNewChildGroupTooltip.few": {
+    "message": "Переместить $1 выбранных элемента в новую подгруппу (удерживайте $2 для копирования)"
+  },
+  "moveSelectionToNewChildGroupTooltip.many": {
+    "message": "Переместить $1 выбранных элементов в новую подгруппу (удерживайте $2 для копирования)"
+  },
+  "moveSelectionToNewChildGroupTooltip.one": {
+    "message": "Переместить $1 выбранный элемент в новую подгруппу (удерживайте $2 для копирования)"
+  },
+  "moveSelectionToNewChildGroupTooltip.other": {
+    "message": "Переместить $1 выбранных элементов в новую подгруппу (удерживайте $2 для копирования)"
+  },
+  "untitled": {
+    "message": "Без названия"
+  },
+  "noTitle": {
+    "message": "<без заголовка>"
+  },
+  "multipleStashRootsWarning": {
+    "message": "У вас несколько папок закладок «$1», и Tab Stash не знает, какую из них использовать. Нажмите здесь, чтобы узнать, как решить эту проблему."
+  },
+  "search": {
+    "message": "Поиск"
+  },
+  "clearSearch": {
+    "message": "Очистить поиск"
+  },
+  "select": {
+    "message": "Выбрать"
+  },
+  "deselect": {
+    "message": "Снять выделение"
+  },
+  "dismissNotification": {
+    "message": "Закрыть уведомление"
+  },
+  "askNextTimeTooltip": {
+    "message": "Если вы передумаете, вы сможете снова включить это подтверждение в настройках."
+  },
+  "askNextTime": {
+    "message": "Спросить меня в следующий раз"
+  },
+  "showing": {
+    "message": "Отображение"
+  },
+  "hiding": {
+    "message": "Скрытие"
+  },
+  "resetButton": {
+    "message": "Сбросить"
+  },
+  "importingTabs": {
+    "message": "Импорт вкладок..."
+  },
+  "creatingStashFolders": {
+    "message": "Создание папок для хранения..."
+  },
+  "updatingBookmarks": {
+    "message": "Обновление закладок..."
+  },
+  "fetchingSiteInfo": {
+    "message": "Получение информации о сайте..."
   }
 }

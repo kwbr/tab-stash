@@ -13,6 +13,7 @@ import {
   filterMap,
   nonReentrant,
   urlToOpen,
+  $t,
 } from "./util/index.js";
 import {logErrorsFrom} from "./util/oops.js";
 
@@ -100,27 +101,30 @@ logErrorsFrom(async () => {
   }
 
   const SHOW_TAB_NAME = browser.sidebarAction
-    ? "Show Stashed Tabs in a Tab"
-    : "Show Stashed Tabs";
+    ? $t("showStashedTabsInTabMenu")
+    : $t("showStashedTabsMenu");
+
+  const SHOW_SIDEBAR_OR_TAB = [
+    "show_sidebar_or_tab",
+    $t("showStashedTabsInSidebarMenu"),
+  ];
 
   menu(
     "1:",
     ["tab", "page", "tools_menu"],
     [
       ["show_tab", SHOW_TAB_NAME],
-      ...(browser.sidebarAction
-        ? [["show_sidebar_or_tab", "Show Stashed Tabs in Sidebar"]]
-        : []),
+      ...(browser.sidebarAction ? [SHOW_SIDEBAR_OR_TAB] : []),
       ["", ""],
-      ["stash_all", "Stash Tabs"],
-      ["stash_pinned", "Stash Pinned Tabs"],
-      ["stash_one", "Stash This Tab"],
-      ["stash_one_newgroup", "Stash This Tab to a New Group"],
+      ["stash_all", $t("stashTabsMenu")],
+      ["stash_pinned", $t("stashPinnedTabsMenu")],
+      ["stash_one", $t("stashThisTabMenu")],
+      ["stash_one_newgroup", $t("stashThisTabToNewGroupMenu")],
       ["", ""],
-      ["copy_all", "Copy Tabs to Stash"],
-      ["copy_one", "Copy This Tab to Stash"],
+      ["copy_all", $t("copyTabsToStashMenu")],
+      ["copy_one", $t("copyThisTabToStashMenu")],
       ["", ""],
-      ["options", "Options..."],
+      ["options", $t("optionsMenu")],
     ],
   );
 
@@ -130,13 +134,11 @@ logErrorsFrom(async () => {
     ["browser_action"],
     [
       ["show_tab", SHOW_TAB_NAME],
-      ...(browser.sidebarAction
-        ? [["show_sidebar_or_tab", "Show Stashed Tabs in Sidebar"]]
-        : []),
+      ...(browser.sidebarAction ? [SHOW_SIDEBAR_OR_TAB] : []),
       ["", ""],
-      ["stash_all", "Stash Tabs"],
-      ["stash_pinned", "Stash Pinned Tabs"],
-      ["copy_all", "Copy Tabs to Stash"],
+      ["stash_all", $t("stashTabsMenu")],
+      ["stash_pinned", $t("stashPinnedTabsMenu")],
+      ["copy_all", $t("copyTabsToStashMenu")],
     ],
   );
 
@@ -145,13 +147,11 @@ logErrorsFrom(async () => {
     ["page_action"],
     [
       ["show_tab", SHOW_TAB_NAME],
-      ...(browser.sidebarAction
-        ? [["show_sidebar_or_tab", "Show Stashed Tabs in Sidebar"]]
-        : []),
+      ...(browser.sidebarAction ? [SHOW_SIDEBAR_OR_TAB] : []),
       ["", ""],
-      ["stash_one", "Stash This Tab"],
-      ["stash_one_newgroup", "Stash This Tab to a New Group"],
-      ["copy_one", "Copy This Tab to Stash"],
+      ["stash_one", $t("stashThisTabMenu")],
+      ["stash_one_newgroup", $t("stashThisTabToNewGroupMenu")],
+      ["copy_one", $t("copyThisTabToStashMenu")],
     ],
   );
 
@@ -298,7 +298,7 @@ logErrorsFrom(async () => {
       model.restoreTabs(
         [
           {
-            title: "Tab Stash - Setup",
+            title: $t("setupTabTitle"),
             url: browser.runtime.getURL("setup.html"),
           },
         ],
@@ -400,13 +400,13 @@ logErrorsFrom(async () => {
       function getTitle(stash?: StashWhatOpt): string {
         switch (stash) {
           case "all":
-            return "Stash all (or selected) tabs";
+            return $t("stashAllTabs");
           case "single":
-            return "Stash this tab";
+            return $t("stashThisTab");
           case "none":
-            return "Show stashed tabs";
+            return $t("showStashedTabsTooltip");
           default:
-            return "Set up Tab Stash";
+            return $t("setUpTabStashTooltip");
         }
       }
 

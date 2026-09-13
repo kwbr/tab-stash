@@ -43,6 +43,7 @@ import {
   tryAgain,
   urlToOpen,
   urlToStash,
+  $t,
 } from "../util/index.js";
 import {logError, logErrorsFrom, UserError} from "../util/oops.js";
 import {makeRandomString} from "../util/random.js";
@@ -1001,7 +1002,7 @@ export class Model {
         createProperties: {windowId: options.toWindow.id},
       });
       await browser.tabGroups.update(gid, {
-        title: options.title ?? (this.searchText.value || "Untitled"),
+        title: options.title ?? (this.searchText.value || $t("untitled")),
       });
       const extent = await shortPoll(() => {
         // NOTE: We're more relaxed about the target index, because the index
@@ -1175,7 +1176,7 @@ export class Model {
 
       for (const g of subgroups) {
         ++to_index;
-        const subtitle = titleOf(g) ?? "Untitled";
+        const subtitle = titleOf(g) ?? $t("untitled");
         const t = (tm?: TaskMonitor) =>
           createTreeInWindow(
             g,
@@ -1374,7 +1375,7 @@ export class Model {
 
     await this.deleted_items.add(
       {
-        title: bm.title ?? "<no title>",
+        title: bm.title ?? $t("noTitle"),
         url: bm.url ?? "about:blank",
         favIconUrl:
           this.favicons.get(urlToOpen(bm.url!))?.value?.favIconUrl || undefined,

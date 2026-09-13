@@ -832,5 +832,113 @@
   },
   "restoreWillSaveSettings": {
     "message": "Tab Stash will remember your choice, but you can change it later in the options, or you can temporarily override it by holding the Shift key."
+  },
+  "showStashedTabsInTabMenu": {
+    "message": "Show Stashed Tabs in a Tab"
+  },
+  "showStashedTabsMenu": {
+    "message": "Show Stashed Tabs"
+  },
+  "showStashedTabsInSidebarMenu": {
+    "message": "Show Stashed Tabs in Sidebar"
+  },
+  "stashTabsMenu": {
+    "message": "Stash Tabs"
+  },
+  "stashPinnedTabsMenu": {
+    "message": "Stash Pinned Tabs"
+  },
+  "stashThisTabMenu": {
+    "message": "Stash This Tab"
+  },
+  "stashThisTabToNewGroupMenu": {
+    "message": "Stash This Tab to a New Group"
+  },
+  "copyTabsToStashMenu": {
+    "message": "Copy Tabs to Stash"
+  },
+  "copyThisTabToStashMenu": {
+    "message": "Copy This Tab to Stash"
+  },
+  "setupTabTitle": {
+    "message": "Tab Stash - Setup"
+  },
+  "showStashedTabsTooltip": {
+    "message": "Show stashed tabs"
+  },
+  "setUpTabStashTooltip": {
+    "message": "Set up Tab Stash"
+  },
+  "deletedItemsPageTitle": {
+    "message": "Deleted Items — Tab Stash"
+  },
+  "optionsPageTitle": {
+    "message": "Tab Stash: Options"
+  },
+  "restorePageTitle": {
+    "message": "Restore Privileged Tab"
+  },
+  "moveSelectionToGroupTooltip.one": {
+    "message": "Move $1 selected item to this group (hold $2 to copy)"
+  },
+  "moveSelectionToGroupTooltip.other": {
+    "message": "Move $1 selected items to this group (hold $2 to copy)"
+  },
+  "moveSelectionToNewChildGroupTooltip.one": {
+    "message": "Move $1 selected item to a new child group (hold $2 to copy)"
+  },
+  "moveSelectionToNewChildGroupTooltip.other": {
+    "message": "Move $1 selected items to a new child group (hold $2 to copy)"
+  },
+  "untitled": {
+    "message": "Untitled"
+  },
+  "noTitle": {
+    "message": "<no title>"
+  },
+  "multipleStashRootsWarning": {
+    "message": "You have multiple \"$1\" bookmark folders, and Tab Stash isn't sure which one to use.  Click here to find out how to resolve the issue."
+  },
+  "search": {
+    "message": "Search"
+  },
+  "clearSearch": {
+    "message": "Clear search"
+  },
+  "select": {
+    "message": "Select"
+  },
+  "deselect": {
+    "message": "Deselect"
+  },
+  "dismissNotification": {
+    "message": "Dismiss notification"
+  },
+  "askNextTimeTooltip": {
+    "message": "If you change your mind, you can turn this confirmation on again in the options."
+  },
+  "askNextTime": {
+    "message": "Ask me again next time"
+  },
+  "showing": {
+    "message": "Showing"
+  },
+  "hiding": {
+    "message": "Hiding"
+  },
+  "resetButton": {
+    "message": "Reset"
+  },
+  "importingTabs": {
+    "message": "Importing tabs..."
+  },
+  "creatingStashFolders": {
+    "message": "Creating stash folders..."
+  },
+  "updatingBookmarks": {
+    "message": "Updating bookmarks..."
+  },
+  "fetchingSiteInfo": {
+    "message": "Fetching site info..."
   }
 }

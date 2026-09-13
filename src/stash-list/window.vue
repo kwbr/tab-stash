@@ -451,7 +451,7 @@ export default defineComponent({
         if (!win) return;
 
         await the.model.putItemsInNewTabGroup({
-          title: the.model.searchText.value || "Untitled",
+          title: the.model.searchText.value || $t("untitled"),
           items: [{url: ""}],
           toWindow: win,
           toIndex: win.children.length,

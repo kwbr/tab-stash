@@ -178,12 +178,14 @@
     >
       <a
         class="action stash here"
-        :title="`Move ${selectedCount} selected item(s) to this group (hold ${altKey} to copy)`"
+        :title="$ts('moveSelectionToGroupTooltip', selectedCount, altKey)"
         @click.prevent.stop="move"
       />
       <a
         class="action stash newgroup"
-        :title="`Move ${selectedCount} selected item(s) to a new child group (hold ${altKey} to copy)`"
+        :title="
+          $ts('moveSelectionToNewChildGroupTooltip', selectedCount, altKey)
+        "
         @click.prevent.stop="moveToChild"
       />
     </ButtonBox>
