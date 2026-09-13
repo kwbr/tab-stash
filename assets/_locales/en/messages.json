@@ -249,7 +249,7 @@
     "message": "What's New"
   },
   "whatsNewNotification": {
-    "message": "Tab Stash $1 has new sorting options and a refreshed look to match Firefox's new sidebar styling. See what else is new!"
+    "message": "Tab Stash $1 now supports Firefox's native tab groups. See what else is new!"
   },
   "deletedItemUndo": {
     "message": "Deleted \"$1\". Undo?"
