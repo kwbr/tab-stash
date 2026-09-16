@@ -238,6 +238,38 @@ describe("model", () => {
       ]);
     });
 
+    it("excludes pinned tabs inside transient tab-group extents", async () => {
+      // Pinning a grouped tab can temporarily leave it in a tab-group extent
+      // while the browser's position/group-membership events are processed.
+      const p = browser.tabs.update(env.tabs.real_estelle.id, {pinned: true});
+      await events.next(browser.tabs.onMoved);
+      await events.next(browser.tabs.onUpdated);
+      await p;
+
+      const win = env.model.tabs.window(env.windows.real.id)!;
+      const items = env.model.stashableItemsInWindow(win);
+      expect(
+        items.flatMap(t =>
+          t.type === "tab" ? [t.id] : t.children.map(c => c.id),
+        ),
+      ).to.deep.equal([
+        env.tabs.real_blank.id,
+        env.tabs.real_bob.id,
+        env.tabs.real_doug.id,
+        env.tabs.real_doug_2.id,
+        env.tabs.real_francis.id,
+        env.tabs.real_harry.id,
+        env.tabs.real_unstashed.id,
+        env.tabs.real_helen.id,
+      ]);
+
+      const groups = items.filter(t => t.type === "tab-group");
+      expect(groups).to.have.length(1);
+      expect(groups[0].children.map(t => t.id)).to.deep.equal([
+        env.tabs.real_francis.id,
+      ]);
+    });
+
     it("allows user selection to override the default choice", async () => {
       await browser.tabs.update(env.tabs.real_bob.id, {highlighted: true});
       await browser.tabs.update(env.tabs.real_doug.id, {highlighted: true});

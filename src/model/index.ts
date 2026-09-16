@@ -455,7 +455,7 @@ export class Model {
     // Else the user only has one tab highlighted. Stash everything in the
     // window, excluding pinned tabs depending on the user's preference.
     if (!this.options.sync.state.stash_include_pinned) {
-      return window.children.filter(t => t.type !== "tab" || !t.pinned);
+      return filterOutPinnedTabs(window.children);
     }
     return window.children;
   }
@@ -1563,6 +1563,23 @@ export type BookmarkTabsResult = {
 //
 // Helpers for working with the mutators
 //
+
+/** Return window items with all pinned tabs removed, while preserving tab
+ * groups containing unpinned tabs.  Pinned tabs normally live directly under
+ * the window, but they can transiently appear inside a tab-group extent while
+ * browser events are being processed. */
+export function filterOutPinnedTabs(
+  items: readonly (Tabs.TabGroupExtent | Tabs.Tab)[],
+): (Tabs.TabGroupExtent | Tabs.Tab)[] {
+  return filterMap(items, item => {
+    if (isTab(item)) return item.pinned ? undefined : item;
+
+    const children = item.children.filter(tab => !tab.pinned);
+    if (children.length === 0) return undefined;
+    if (children.length === item.children.length) return item;
+    return {...item, children};
+  });
+}
 
 /** Apply `copying()` to a set of stash items if `predicate` is true. */
 export function copyIf(predicate: boolean, items: StashItem[]): StashItem[] {
